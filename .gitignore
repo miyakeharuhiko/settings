@@ -1,2 +1,5 @@
-auto-save-list/
+emacs/auto-save-list/
+emacs/elpa/
+emacs/*~
+tmux/*~
 *~

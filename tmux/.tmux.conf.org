@@ -1,0 +1,47 @@
+
+# Set pre-fix key ctrl-]
+set -g prefix C-]
+unbind C-b
+
+unbind %
+bind | split-window -h
+
+unbind '"'
+bind '-' split-window -v
+
+set-option -g history-limit 10000
+
+# set-window-option -g mode-keys emacs
+
+# color settings of background
+#set -g window-style 'bg=colour239'
+set -g window-style 'bg=colour238'
+#set -g window-active-style 'bg=colour234'
+set -g window-active-style 'bg=colour232'
+
+# move pane with shift + arrow-key
+bind -n S-left select-pane -L
+bind -n S-down select-pane -D
+bind -n S-up select-pane -U
+bind -n S-right select-pane -R
+
+
+# status lineの設定
+## window-status を中央揃えで配置する
+set-option -g status-justify "centre"
+## status line の背景色を指定する。
+set-option -g status-bg "colour238"
+## status line の文字色を指定する。
+set-option -g status-fg "colour255"
+## status-left の最大の長さを指定する。
+set-option -g status-left-length 20
+## status-left のフォーマットを指定する。
+set-option -g status-left "#[fg=colour255,bg=colour241]Session: #S #[default]"
+## window-status のフォーマットを指定する。
+set-window-option -g window-status-format " #I: #W "
+## カレントウィンドウの window-status のフォーマットを指定する
+set-window-option -g window-status-current-format "#[fg=colour255,bg=colour27,bold] #I: #W #[default]"
+## status-right の最大の長さを指定する。
+set-option -g status-right-length 60
+## status-right のフォーマットを指定する。
+set-option -g status-right "#[fg=colour255,bg=colour241] #h | LA: #(cut -d' ' -f-3 /proc/loadavg) | %m/%d %H:%M:%S#[default]"
